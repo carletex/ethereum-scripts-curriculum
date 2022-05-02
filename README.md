@@ -26,4 +26,4 @@ yarn install
 node index.js
 ```
 
-You can also run thes script independently with `node src/scriptName.js`.
+You can also run the scripts independently with `node src/scriptName.js`.
