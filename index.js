@@ -15,8 +15,8 @@ console.log(
   )
 );
 
-const scriptOptions = Object.entries(scriptList).map(([id, data]) => ({
-  name: `${data.name} (${data.teaser})`,
+const scriptOptions = Object.entries(scriptList).map(([id, data], index) => ({
+  name: `${index}. ${data.name} (${data.teaser})`,
   value: id,
 }));
 
@@ -49,6 +49,12 @@ const processAnswers = async (answers) => {
     return;
   }
   console.log("\n", chalk.bgGreen(output?.stdout), "\n");
+  console.log(
+    "\t",
+    chalk.white("check the code at"),
+    chalk.bgGray(scriptPath),
+    "\n"
+  );
   prompt();
 };
 
