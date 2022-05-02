@@ -10,6 +10,8 @@ if (!fs.existsSync(mnemonicPath)) {
   process.exit(1);
 }
 
+// The same mnemonic will always produce the same seed =>
+// We'll always get the same addresses.
 const mnemonic = fs.readFileSync(mnemonicPath).toString();
 
 const wallet0 = Wallet.fromMnemonic(mnemonic);
