@@ -1,10 +1,12 @@
-import fs from "fs"
+import fs from "fs";
 import path from "path";
-import { Wallet } from "ethers"
+import { Wallet } from "ethers";
 
 const mnemonicPath = path.resolve("./mnemonic.txt");
 if (!fs.existsSync(mnemonicPath)) {
-  console.error("❌ The mnemonic file doesn't exist. Use the createWallet script to create it..");
+  console.error(
+    "❌ The mnemonic file doesn't exist. Use the createWallet script to create it.."
+  );
   process.exit(1);
 }
 

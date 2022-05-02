@@ -1,0 +1,8 @@
+{
+  "provider": {
+    "name": "Provider",
+    "script": "src/providers.js",
+    "teaser": "Connect to a provider an show current block",
+    "description": "A Provider provides an abstraction for a connection to the Ethereum Network. It provides read-only access to the Blockchain and its status.\n"
+  }
+}

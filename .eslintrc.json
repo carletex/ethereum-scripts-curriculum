@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": ["eslint:recommended", "prettier"],
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "rules": {}
+}

@@ -1,4 +1,4 @@
-import fs from "fs"
+import fs from "fs";
 import path from "path";
 import bip39 from "bip39";
 
@@ -9,7 +9,11 @@ if (!fs.existsSync(savePath)) {
   fs.writeFileSync(savePath, mnemonic.toString());
 } else {
   // file exists
-  console.error("❌ The mnemonic file already exists:", savePath, "\n\nDelete it if you want to create a new one.");
+  console.error(
+    "❌ The mnemonic file already exists:",
+    savePath,
+    "\n\nDelete it if you want to create a new one."
+  );
   process.exit(1);
 }
 
