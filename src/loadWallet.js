@@ -14,11 +14,11 @@ if (!fs.existsSync(mnemonicPath)) {
 // We'll always get the same addresses.
 const mnemonic = fs.readFileSync(mnemonicPath).toString();
 
-const wallet0 = Wallet.fromMnemonic(mnemonic);
-console.log("1st derived wallet address from mnemonic:", wallet0.address);
+const account0 = Wallet.fromMnemonic(mnemonic);
+console.log("1st derived wallet address from mnemonic:", account0.address);
 
 // Default "m/44’/60’/0’/0/0"
-const walletNumber = 1;
-const derivedPath = `m/44'/60'/0'/0/${walletNumber}`;
-const wallet1 = Wallet.fromMnemonic(mnemonic, derivedPath);
-console.log("2nd derived wallet address from mnemonic:", wallet1.address);
+const accountNumber = 1;
+const derivedPath = `m/44'/60'/0'/0/${accountNumber}`;
+const account1 = Wallet.fromMnemonic(mnemonic, derivedPath);
+console.log("2nd derived wallet address from mnemonic:", account1.address);
