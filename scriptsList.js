@@ -14,6 +14,11 @@ const scriptList = {
     script: "src/loadWallet.js",
     teaser: "Derives the wallet addresses using the mnemonic file",
   },
+  getBalance: {
+    name: "Get Address Balance",
+    script: "src/getBalance.js",
+    teaser: "Get the Balance from an address",
+  },
 };
 
 export default scriptList;

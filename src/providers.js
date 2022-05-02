@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
+import isCalledFromCli from "./helpers/isCalledFromCli.js";
 
-// Auto-calling async function to allow await-style.
-(async () => {
+const getProvider = async () => {
   // Your provider RPC URL. It provides read-only access to the Blockchain and its status.
   // It can be:
   // - 3rd party service: Infura, Alchemy, etc.
@@ -22,8 +22,20 @@ import { ethers } from "ethers";
     process.exit(1);
   }
 
+  return provider;
+};
+
+// Auto-calling async function to allow await-style.
+(async () => {
+  // Avoid running this function when imported from other modules.
+  if (!isCalledFromCli(import.meta)) return;
+
+  const provider = await getProvider();
   // Once we are connected, we can do several read-only operations.
   // e.g. Getting the latest block number on the blockchain.
   const currentMainnetBlock = await provider.getBlockNumber();
   console.log("\tCurrent mainnet block number", currentMainnetBlock);
 })();
+
+// We export it so we can use it on other scripts.
+export { getProvider };
