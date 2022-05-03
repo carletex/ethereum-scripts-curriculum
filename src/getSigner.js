@@ -3,13 +3,13 @@ import isCalledFromCli from "./helpers/isCalledFromCli.js";
 import { getProvider } from "./getProvider.js";
 import { loadWallet } from "./loadWallet.js";
 
-// Init and return a signer.
+// Init and return a signer (the first account from our wallet).
 //
 // A Signer can sign messages and transactions and send signed transactions to
 // the Ethereum Network to execute state changing operations.
 // (VS. provider, which is read-only)
-const getSigner = async () => {
-  const provider = await getProvider();
+const getSigner = async (testnet = false) => {
+  const provider = await getProvider(testnet);
   const accounts = await loadWallet();
 
   // Instantiate and return the first signer from our Wallet,

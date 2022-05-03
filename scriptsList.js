@@ -29,6 +29,11 @@ const scriptList = {
     script: "src/getSigner.js",
     teaser: "Get a signer and connect it to a provider",
   },
+  sendEth: {
+    name: "Send ETH",
+    script: "src/sendEth.js",
+    teaser: "Send ETH between accounts on the Rinkeby Testnet",
+  },
 };
 
 export default scriptList;
