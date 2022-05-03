@@ -24,6 +24,11 @@ const scriptList = {
     script: "src/getBalance.js",
     teaser: "Get the Balance from an address",
   },
+  getSigner: {
+    name: "Signer",
+    script: "src/getSigner.js",
+    teaser: "Get a signer and connect it to a provider",
+  },
 };
 
 export default scriptList;
