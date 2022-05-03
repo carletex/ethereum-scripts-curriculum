@@ -1,5 +1,4 @@
 import { ethers } from "ethers";
-// We use the utils we create on previous scripts.
 import { getProvider } from "./providers.js";
 import { loadWallet } from "./loadWallet.js";
 
@@ -13,6 +12,7 @@ import { loadWallet } from "./loadWallet.js";
   // - 10^9 wei = 1 gwei
   // - 10^18 wei = 1 ether
   const myBalance = await provider.getBalance(myWallet[0]);
+  // We can also use ENS names.
   const vitalikBalance = await provider.getBalance("vitalik.eth");
 
   // We can use formatEther util to parse the Wei balance into Ether.
