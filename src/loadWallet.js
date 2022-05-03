@@ -3,6 +3,10 @@ import path from "path";
 import { Wallet } from "ethers";
 import isCalledFromCli from "./helpers/isCalledFromCli.js";
 
+// Loads a wallet using a mnemonic file and returns the first 10 addresses.
+//
+// With a single mnemonic, using a derivedPath, we can create a set of
+// deterministic addresses. So 1 mnemonic => N addresses (N public/private keys)
 const loadWallet = async () => {
   const mnemonicPath = path.resolve("./mnemonic.txt");
   if (!fs.existsSync(mnemonicPath)) {

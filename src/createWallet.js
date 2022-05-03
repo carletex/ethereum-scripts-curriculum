@@ -2,6 +2,11 @@ import fs from "fs";
 import path from "path";
 import bip39 from "bip39";
 
+// Creates mnemonic file that we can use to create a Wallet.
+//
+// A Wallet manages a private/public key pair which is used to cryptographically
+// sign transactions and prove ownership on the Ethereum network.
+
 const savePath = path.resolve("./mnemonic.txt");
 // Most modern cryptocurrency wallets implement BIP39,
 // a way of generating deterministic keys/wallets.

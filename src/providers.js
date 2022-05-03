@@ -1,6 +1,12 @@
 import { ethers } from "ethers";
 import isCalledFromCli from "./helpers/isCalledFromCli.js";
 
+// Init and return a provider.
+//
+// A Provider provides an abstraction for a connection to the Ethereum Network.
+// It provides read-only access to the Blockchain and its status.
+//
+// We create a function so we can export it and use it in other scripts
 const getProvider = async () => {
   // Your provider RPC URL. It provides read-only access to the Blockchain and its status.
   // It can be:
@@ -25,7 +31,8 @@ const getProvider = async () => {
   return provider;
 };
 
-// Auto-calling async function to allow await-style.
+// Auto-calling async function to allow await-style. Will be run
+// when we call this script from the Cli.
 (async () => {
   // Avoid running this function when imported from other modules.
   if (!isCalledFromCli(import.meta)) return;

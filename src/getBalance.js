@@ -1,8 +1,8 @@
 import { ethers } from "ethers";
+// We use the utils we create on previous scripts.
 import { getProvider } from "./providers.js";
 import { loadWallet } from "./loadWallet.js";
 
-// Auto-calling async function to allow await-style.
 (async () => {
   const provider = await getProvider();
   const myWallet = await loadWallet();
