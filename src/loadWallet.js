@@ -20,24 +20,30 @@ const loadWallet = async () => {
   // We'll always get the same addresses.
   const mnemonic = fs.readFileSync(mnemonicPath).toString();
 
-  const addresses = [];
+  const accounts = [];
   for (let accountNumber = 0; accountNumber < 10; accountNumber++) {
     // Default derivedPath "m/44’/60’/0’/0/0"
     const derivedPath = `m/44'/60'/0'/0/${accountNumber}`;
-    const wallet = Wallet.fromMnemonic(mnemonic, derivedPath);
-    addresses.push(wallet.address);
+    const account = Wallet.fromMnemonic(mnemonic, derivedPath);
+    accounts.push(account);
   }
 
-  return addresses;
+  return accounts;
 };
 
 (async () => {
   if (!isCalledFromCli(import.meta)) return;
 
-  const wallet = await loadWallet();
+  const accounts = await loadWallet();
 
-  console.log("\t1st derived wallet address from mnemonic:", wallet[0]);
-  console.log("\t2nd derived wallet address from mnemonic:", wallet[1]);
+  console.log(
+    "\t1st derived wallet address from mnemonic:",
+    accounts[0].address
+  );
+  console.log(
+    "\t2nd derived wallet address from mnemonic:",
+    accounts[1].address
+  );
 })();
 
 export { loadWallet };
