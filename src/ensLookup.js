@@ -1,5 +1,5 @@
 // We use the utils we create on previous scripts.
-import { getProvider } from "./providers.js";
+import { getProvider } from "./getProvider.js";
 
 // Get an address from ENS and vice-versa.
 //
