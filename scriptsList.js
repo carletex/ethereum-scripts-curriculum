@@ -1,7 +1,7 @@
 const scriptList = {
   provider: {
     name: "Provider",
-    script: "src/providers.js",
+    script: "src/getProvider.js",
     teaser: "Connects to a provider an shows the current Mainnet block",
   },
   createWallet: {
