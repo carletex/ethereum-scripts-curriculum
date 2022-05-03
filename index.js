@@ -1,7 +1,5 @@
 import inquirer from "inquirer";
-import util from "util";
-import { exec as childProccess } from "child_process";
-const exec = util.promisify(childProccess);
+import { spawn } from "child_process";
 import chalk from "chalk";
 import scriptList from "./scriptsList.js";
 
@@ -40,22 +38,26 @@ const processAnswers = async (answers) => {
 
   const scriptPath = scriptList[scriptToRun].script;
 
-  let output;
-  try {
-    output = await exec(`node ${scriptPath}`);
-  } catch (e) {
-    console.error("\n", chalk.bgRed(e.stderr), "\n");
+  const output = spawn("node", [scriptPath]);
+
+  output.stdout.on("data", (data) => {
+    console.log("\n", chalk.bgGreen(data.toString()));
+  });
+
+  output.stderr.on("data", (data) => {
+    console.error("\n", chalk.bgRed(data.toString()), "\n");
+  });
+
+  output.on("exit", () => {
+    console.log(
+      "\t",
+      chalk.white("check the code at"),
+      chalk.bgGray(scriptPath),
+      "\n"
+    );
+
     prompt();
-    return;
-  }
-  console.log("\n", chalk.bgGreen(output?.stdout), "\n");
-  console.log(
-    "\t",
-    chalk.white("check the code at"),
-    chalk.bgGray(scriptPath),
-    "\n"
-  );
-  prompt();
+  });
 };
 
 const prompt = () => inquirer.prompt(questions).then(processAnswers);

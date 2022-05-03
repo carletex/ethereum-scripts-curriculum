@@ -24,7 +24,7 @@ import { getSigner } from "./getSigner.js";
     process.exit(1);
   }
 
-  console.log(`\tSending ETH from ${signer.address} to ${receiverAddress}\n\n`);
+  console.log(`\tSending ETH from ${signer.address} to ${receiverAddress}`);
 
   // This sends the TX to be processed.
   // The await here just waits for the transaction to be sent (not completed!)
@@ -33,7 +33,7 @@ import { getSigner } from "./getSigner.js";
     value: amountToSend,
   });
 
-  console.log("\tTransaction Sent! Wait until the TX is mined... \n\n");
+  console.log("\tTransaction Sent! Wait until the TX is mined...");
 
   // We can wait until the tx is completed (mined)
   const receipt = await tx.wait();
