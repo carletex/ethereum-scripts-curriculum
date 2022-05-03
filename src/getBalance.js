@@ -1,17 +1,17 @@
 import { ethers } from "ethers";
-import { getProvider } from "./providers.js";
+import { getProvider } from "./getProvider.js";
 import { loadWallet } from "./loadWallet.js";
 
 (async () => {
   const provider = await getProvider();
-  const myWallet = await loadWallet();
+  const myAccounts = await loadWallet();
 
   // The result is a BigNumber (a JS an object which safely allows mathematical
   // operations on numbers of any magnitude.)
   // We will get the balance in wei
   // - 10^9 wei = 1 gwei
   // - 10^18 wei = 1 ether
-  const myBalance = await provider.getBalance(myWallet[0]);
+  const myBalance = await provider.getBalance(myAccounts[0].address);
   // We can also use ENS names.
   const vitalikBalance = await provider.getBalance("vitalik.eth");
 

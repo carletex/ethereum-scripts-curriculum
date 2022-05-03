@@ -7,13 +7,22 @@ import isCalledFromCli from "./helpers/isCalledFromCli.js";
 // It provides read-only access to the Blockchain and its status.
 //
 // We create a function so we can export it and use it in other scripts
-const getProvider = async () => {
+const getProvider = async (testnet = false) => {
   // Your provider RPC URL. It provides read-only access to the Blockchain and its status.
   // It can be:
   // - 3rd party service: Infura, Alchemy, etc.
   // - Your own node.
-  const providerUrl =
-    "https://mainnet.infura.io/v3/460f40a260564ac4a4f4b3fffb032dad";
+  let providerUrl;
+  // If the argument testnet is TRUE, we connect to one of the Ethereum Network
+  // testnets (rinkeby). This is useful for testing, so we don't risk real funds.
+  // Other testnets: Kovan, Goerli, Ropsten.
+  if (testnet) {
+    providerUrl =
+      "https://rinkeby.infura.io/v3/460f40a260564ac4a4f4b3fffb032dad";
+  } else {
+    providerUrl =
+      "https://mainnet.infura.io/v3/460f40a260564ac4a4f4b3fffb032dad";
+  }
 
   let provider;
   try {
