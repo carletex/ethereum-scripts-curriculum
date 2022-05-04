@@ -34,6 +34,11 @@ const scriptList = {
     script: "src/sendEth.js",
     teaser: "Send ETH between accounts on the Rinkeby Testnet",
   },
+  readContract: {
+    name: "Read Contract",
+    script: "src/readContract.js",
+    teaser: "Call a read-only method from a contract",
+  },
 };
 
 export default scriptList;
