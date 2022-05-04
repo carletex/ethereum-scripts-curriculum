@@ -39,6 +39,11 @@ const scriptList = {
     script: "src/readContract.js",
     teaser: "Call a read-only method from a contract",
   },
+  readContractEvents: {
+    name: "Read Contract Events",
+    script: "src/readContractEvents.js",
+    teaser: "Read the latest events from a contract",
+  },
 };
 
 export default scriptList;
