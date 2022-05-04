@@ -44,6 +44,11 @@ const scriptList = {
     script: "src/readContractEvents.js",
     teaser: "Read the latest events from a contract",
   },
+  signAndVerify: {
+    name: "Sign and Verify",
+    script: "src/signAndVerify.js",
+    teaser: "Sign a message and verify its authenticity",
+  },
 };
 
 export default scriptList;
