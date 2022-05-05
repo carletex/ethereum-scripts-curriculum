@@ -49,6 +49,12 @@ const scriptList = {
     script: "src/signAndVerify.js",
     teaser: "Sign a message and verify its authenticity",
   },
+  encryptAndDecrypt: {
+    name: "Encrypt and Decrypt",
+    script: "src/encryptAndDecrypt.js",
+    teaser:
+      "Encrypt a message with someone’s public key, and they use their private key to decrypt it",
+  },
 };
 
 export default scriptList;
