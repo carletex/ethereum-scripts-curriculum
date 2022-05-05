@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import { getProvider } from "./getProvider.js";
 import loogiesData from "./contracts/loogies.js";
 
-// Call a read-only method from a contract
+// Call a read-only function of a contract
 //
 // We are going to use the Loogie NFT contract.
 // We want to get who is the owner of the first token

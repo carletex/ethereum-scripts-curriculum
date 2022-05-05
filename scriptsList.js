@@ -2,12 +2,12 @@ const scriptList = {
   provider: {
     name: "Provider",
     script: "src/getProvider.js",
-    teaser: "Connects to a provider an shows the current Mainnet block",
+    teaser: "Connects to a provider and shows the latest mined Mainnet block",
   },
   createWallet: {
     name: "Create Wallet",
     script: "src/createWallet.js",
-    teaser: "Set up a wallet creating a mnemonic file",
+    teaser: "Creates a mnemonic file",
   },
   loadWallet: {
     name: "Load Wallet",
@@ -17,12 +17,13 @@ const scriptList = {
   ensAddress: {
     name: "ENS lookup",
     script: "src/ensLookup.js",
-    teaser: "Get the address for a given ENS (Ethereum Name Service)",
+    teaser:
+      "Get the address for a given ENS (Ethereum Name Service)  and vice versa",
   },
   getBalance: {
     name: "Get Address Balance",
     script: "src/getBalance.js",
-    teaser: "Get the Balance from an address",
+    teaser: "Get the ETH Balance for an address",
   },
   getSigner: {
     name: "Signer",
@@ -37,12 +38,12 @@ const scriptList = {
   readContract: {
     name: "Read Contract",
     script: "src/readContract.js",
-    teaser: "Call a read-only method from a contract",
+    teaser: "Call a read-only function of a contract",
   },
   readContractEvents: {
     name: "Read Contract Events",
     script: "src/readContractEvents.js",
-    teaser: "Read the latest events from a contract",
+    teaser: "Read the latest events of a contract",
   },
   signAndVerify: {
     name: "Sign and Verify",
@@ -53,7 +54,7 @@ const scriptList = {
     name: "Encrypt and Decrypt",
     script: "src/encryptAndDecrypt.js",
     teaser:
-      "Encrypt a message with someone’s public key, and they use their private key to decrypt it",
+      "Encrypt a message with someone’s public key, and decrypt it using their private key",
   },
 };
 

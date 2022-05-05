@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import { getProvider } from "./getProvider.js";
 import daiData from "./contracts/dai.js";
 
-// Read the latest events from a contract
+// Read the latest events of a contract
 //
 // Events are the logs of the Ethereum Network.
 // We can listen and act to these events.

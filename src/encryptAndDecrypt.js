@@ -3,8 +3,8 @@ import EthCrypto from "eth-crypto";
 import { loadWallet } from "./loadWallet.js";
 import { getProvider } from "./getProvider.js";
 
-// Encrypt (asymmetrically) a message with someone’s public key,
-// and they use their private key to decrypt it
+// Encrypt a message with someone’s public key,
+// and decrypt it using their private key
 //
 // We use the eth-crypto library.
 (async () => {
